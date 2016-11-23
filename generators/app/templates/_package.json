@@ -1,0 +1,56 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= moduleDescription %>",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": ""
+  },
+  "license": "MIT",
+  "private": false,
+  "main": "src/index.js",
+  "engines": {
+    "node": "~6.4.x"
+  },
+  "scripts": {
+    "start": "npm run build && node src/index.js",
+    "dev": "nodemon --exec 'npm run lint && npm run test'",
+    "test": "mocha",
+    "postinstall": "npm run check-dependencies",
+    "check-dependencies": "nsp check",
+    "lint": "eslint src test",
+    "coverage": "istanbul cover _mocha",
+    "climate-coverage": "npm run coverage && codeclimate-test-reporter < coverage/lcov.info",
+    "climate-coverage-dotenv": "npm run coverage && node -r dotenv/config node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info"
+  },
+  "config": {
+    "pre-git": {
+      "pre-commit": [
+        "npm run lint"
+      ],
+      "post-commit": [
+        "git status"
+      ],
+      "pre-push": [
+        "npm test"
+      ]
+    }
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.3",
+    "cross-env": "^2.0.0",
+    "dotenv": "^2.0.0",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "expect.js": "^0.3.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
+    "nsp": "^2.6.1",
+    "pre-git": "^3.10.0"
+  }
+}
