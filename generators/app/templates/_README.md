@@ -2,9 +2,12 @@
 
 <%= moduleDescription %>
 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
 ## License
 
 MIT © [<%= authorName %>]()
+
 
 [npm-image]: https://badge.fury.io/js/<%= moduleName %>.svg
 [npm-url]: https://npmjs.org/package/<%= moduleName %>
