@@ -7,7 +7,7 @@ var shell = require('shelljs');
 module.exports = yeoman.Base.extend({
   prompting: function () {
     this.log(yosay(
-      'Welcome to the ' + chalk.red('flytour-node-module') + ' generator!'
+      'Welcome to the ' + chalk.red('node-module-boilerplate') + ' generator!'
     ));
 
     var authorName;
@@ -136,6 +136,12 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    this.installDependencies();
+
+    if (shell.which('git')) {
+      shell.exec('git init');
+    }
+    this.installDependencies({
+      bower: false
+    });
   }
 });
