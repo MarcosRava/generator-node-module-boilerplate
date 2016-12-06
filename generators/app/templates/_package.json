@@ -14,7 +14,7 @@
     "node": "~6.4.x"
   },
   "scripts": {
-    "start": "npm run build && node src/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon --exec 'npm run lint && npm run test'",
     "test": "mocha",
     "postinstall": "npm run check-dependencies",

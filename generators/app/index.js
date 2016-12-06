@@ -125,8 +125,8 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('LICENSE')
       );
       this.fs.copy(
-        this.templatePath('_test/_index.js'),
-        this.destinationPath('test/index.js')
+        this.templatePath('_test/_index.test.js'),
+        this.destinationPath('test/index.test.js')
       );
       this.fs.copy(
         this.templatePath('_src/_index.js'),
